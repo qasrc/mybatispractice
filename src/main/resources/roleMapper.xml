@@ -3,6 +3,10 @@
         PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
         "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="com.learn.mapper.RoleMapper">
+
+    <insert id="insertRole" parameterType="com.learn.po.Role" keyProperty="id" useGeneratedKeys="true">
+        INSERT INTO role(role_name, note) VALUE (#{roleName},#{note})
+    </insert>
     <select id="getRoleById" resultType="com.learn.po.Role">
         SELECT id,role_name roleName,note
         FROM role

@@ -9,4 +9,6 @@ import com.learn.po.Role;
 public interface RoleMapper {
 
     Role getRoleById(int id);
+
+    int insertRole(Role role);
 }
