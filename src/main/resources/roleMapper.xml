@@ -8,6 +8,21 @@
         #{prefix}.role_name,#{prefix}.note
     </sql>
 
+    <resultMap id="map1" type="string"/>
+
+    <resultMap id="map2" type="string"/>
+
+    <resultMap id="baseMap" type="com.learn.po.StudentBean">
+        <!--使用discriminator进行鉴别选择-->
+        <discriminator javaType="string" column="id">
+            <case value="1" resultMap="map1"/>
+            <case value="2" resultMap="map2"/>
+        </discriminator>
+    </resultMap>
+
+    <!--开启二级缓存-->
+    <cache type="com.learn.cache.MyCache"/>
+
     <insert id="insertRole" parameterType="com.learn.po.Role" keyProperty="id" useGeneratedKeys="true">
         INSERT INTO role(role_name, note) VALUE (#{roleName},#{note})
     </insert>

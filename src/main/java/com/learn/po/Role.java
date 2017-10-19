@@ -2,6 +2,8 @@ package com.learn.po;
 
 import org.apache.ibatis.type.Alias;
 
+import java.io.Serializable;
+
 /**
  * 角色
  *
@@ -9,7 +11,7 @@ import org.apache.ibatis.type.Alias;
  * Created on 2017/10/15  1:50
  */
 @Alias("role")
-public class Role {
+public class Role implements Serializable {
     private Integer id;
     private String roleName;
     private String note;
