@@ -1,6 +1,9 @@
 package com.learn.mapper;
 
 import com.learn.po.Role;
+import org.apache.ibatis.annotations.Param;
+
+import java.util.List;
 
 /**
  * @author zhan
@@ -13,4 +16,6 @@ public interface RoleMapper {
     int insertRole(Role role);
 
     Role getRole(int id);
+
+    List<Role> getRoleByName(@Param("name") String name);
 }

@@ -26,7 +26,7 @@
     <insert id="insertRole" parameterType="com.learn.po.Role" keyProperty="id" useGeneratedKeys="true">
         INSERT INTO role(role_name, note) VALUE (#{roleName},#{note})
     </insert>
-    <select id="getRoleById" resultType="com.learn.po.Role">
+    <select id="getRoleById" flushCache="true" useCache="true" resultType="com.learn.po.Role">
         SELECT id,role_name roleName,note
         FROM role
         WHERE id=#{id}
@@ -38,5 +38,11 @@
         </include>
         FROM role r
         WHERE id=#{id}
+    </select>
+    <select id="getRoleByName" resultType="com.learn.po.Role">
+        <bind name="name" value="'%'+name+'%'"/>
+        SELECT id,role_name roleName,note
+        FROM role
+        WHERE role_name LIKE #{name}
     </select>
 </mapper>

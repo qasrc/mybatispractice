@@ -8,6 +8,7 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import java.io.IOException;
+import java.util.List;
 
 /**
  * @author zhan
@@ -35,6 +36,9 @@ public class MybatisTest {
         Role role2 = roleMapper1.getRoleById(1);
         sqlSession.commit();
         LOGGER.info(role2);
+        //根据角色名称查询角色
+        List<Role> role3 = roleMapper1.getRoleByName("1");
+        LOGGER.info(role3);
 
     }
 }
