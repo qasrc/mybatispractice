@@ -11,4 +11,6 @@ public interface RoleMapper {
     Role getRoleById(int id);
 
     int insertRole(Role role);
+
+    Role getRole(int id);
 }
