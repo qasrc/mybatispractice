@@ -13,8 +13,12 @@
     <orderEntry type="library" name="Gradle: org.mybatis:mybatis:3.4.1" level="project" />
     <orderEntry type="library" name="Gradle: log4j:log4j:1.2.17" level="project" />
     <orderEntry type="library" name="Gradle: mysql:mysql-connector-java:5.1.39" level="project" />
+    <orderEntry type="library" name="Gradle: cglib:cglib:3.2.4" level="project" />
     <orderEntry type="library" name="Gradle: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Gradle: org.ow2.asm:asm:5.1" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.ant:ant:1.9.6" level="project" />
     <orderEntry type="library" name="Gradle: org.hamcrest:hamcrest-core:1.3" level="project" />
+    <orderEntry type="library" name="Gradle: org.apache.ant:ant-launcher:1.9.6" level="project" />
   </component>
   <component name="TestModuleProperties" production-module="mybatispractice_main" />
 </module>

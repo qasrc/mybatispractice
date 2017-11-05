@@ -8,7 +8,6 @@ import org.apache.log4j.Logger;
 import org.junit.Test;
 
 import java.io.IOException;
-import java.util.List;
 
 /**
  * @author zhan
@@ -23,9 +22,9 @@ public class MybatisTest {
         SqlSession sqlSession = SqlSessionFactoryUtil.openSqlSession();
         RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
         LOGGER.info("进行第一次查询 ");
-        Role role = roleMapper.getRoleById(1);
+        Role role = roleMapper.getRoleById(3);
         LOGGER.info(role.toString());
-        LOGGER.info("相同的条件进行第二次查询");
+        /*LOGGER.info("相同的条件进行第二次查询");
         Role role1 = roleMapper.getRoleById(1);
         sqlSession.commit();
         LOGGER.info(role1);
@@ -38,7 +37,19 @@ public class MybatisTest {
         LOGGER.info(role2);
         //根据角色名称查询角色
         List<Role> role3 = roleMapper1.getRoleByName("1");
-        LOGGER.info(role3);
+        LOGGER.info(role3);*/
 
+    }
+
+    @Test
+    public void insert() throws IOException {
+        Role role = new Role();
+        role.setRoleName("admin");
+        role.setNote("测试");
+        SqlSession sqlSession = SqlSessionFactoryUtil.openSqlSession();
+        RoleMapper roleMapper = sqlSession.getMapper(RoleMapper.class);
+        roleMapper.insertRole(role);
+        sqlSession.commit();
+        LOGGER.info(role);
     }
 }
